@@ -1,6 +1,11 @@
-public struct PluginInterface {
-    public private(set) var text = "Hello, World!"
+public protocol PluginInterfaceProtocol {
+    func run() -> String
+}
 
-    public init() {
+open class PluginBuilder {
+    public init() {}
+
+    open func build() -> PluginInterfaceProtocol {
+        fatalError("You should override this method.")
     }
 }
