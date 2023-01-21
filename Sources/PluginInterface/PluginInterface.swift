@@ -1,20 +1,29 @@
 import SwiftUI
 
 public protocol PluginInterfaceProtocol {
-    func run() -> String
+    var pluginName: String {get}
+    
+    func setup() -> Void
+    func onCreate() -> Void
+    func onDestroy() -> Void
+    func cleanUp() -> Void
 }
 
-
-public protocol PluginUIInterfaceProtocol: PluginInterfaceProtocol {
-    associatedtype Body: View
-    @ViewBuilder @MainActor var view: Self.Body { get }
-}
-
-
-open class PluginBuilder<T> {
-    public init() {}
-
-    open func build() -> any PluginInterfaceProtocol {
-        fatalError("You should override this method.")
+//MARK: Life cycle methods
+public extension PluginInterfaceProtocol {
+    func setup() {
+        
+    }
+    
+    func onCreate() {
+        
+    }
+    
+    func onDestroy() {
+        
+    }
+    
+    func cleanUp() {
+        
     }
 }
