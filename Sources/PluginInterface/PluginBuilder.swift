@@ -11,7 +11,7 @@ import SwiftUI
 open class PluginBuilder<T> {
     public init() {}
 
-    open func build(fileUtils: FileUtils) -> any PluginInterfaceProtocol {
+    open func build(fileUtils: FileUtilsProtocol) -> any PluginInterfaceProtocol {
         fatalError("You should override this method.")
     }
 }

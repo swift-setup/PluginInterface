@@ -10,7 +10,7 @@ import Foundation
 /**
  Protocol defines a list of file utils that can let plugin to interact with the file system
  */
-public protocol FileUtils {
+public protocol FileUtilsProtocol {
     /**
      After calling this method, software will popup a folder select dialog and will change the current working dir
      upon the user's selection. May throw if user did't pick one.
