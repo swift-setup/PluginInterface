@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-open class PluginBuilder<T> {
+open class PluginBuilder {
     public init() {}
 
     open func build(fileUtils: FileUtilsProtocol) -> any PluginInterfaceProtocol {
