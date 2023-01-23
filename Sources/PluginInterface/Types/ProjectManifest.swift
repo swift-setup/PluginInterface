@@ -7,30 +7,40 @@
 
 import Foundation
 
-public struct ProjectManifest: Codable, Hashable {
+public protocol ProjectManifestProtocol {
     /**
      The display name of the project
      */
-    public var displayName: String
+    var displayName: String {get set}
     /**
      The unique bundle identifier of the project
      */
-    public var bundleIdentifier: String
+    var bundleIdentifier: String {get set}
     /**
      The name of the author of the project
      */
-    public var author: String
+    var author: String {get set}
     /**
      A short description of the project
      */
-    public var shortDescription: String
+    var shortDescription: String {get set}
     /**
      The repository URL where the project can be found
      */
-    public var repository: String
+    var repository: String {get set}
     /**
      An array of keywords associated with the project
      */
+    var keywords: [String] {get set}
+}
+
+
+public struct ProjectManifest: ProjectManifestProtocol, Codable, Hashable {
+    public var displayName: String
+    public var bundleIdentifier: String
+    public var author: String
+    public var shortDescription: String
+    public var repository: String
     public var keywords: [String]
     
     /**
