@@ -14,12 +14,12 @@ public protocol FileUtilsProtocol {
     /**
      This is a computed property that returns the current workspace URL.
      */
-    var currentWorkSpace: URL { get }
+    var currentWorkSpace: URL? { get }
     
     /**
      This is a computed property that returns the current workspace path as a string.
      */
-    var currentWorkSpacePath: String { get }
+    var currentWorkSpacePath: String? { get }
     
     /**
      Displays a folder selection dialog and updates the current working directory based on the user's selection.
