@@ -34,11 +34,11 @@ public protocol FileUtilsProtocol {
     /**
      Writes the specified content to the file located at the specified path.
      If the file does not exist, it will be created. If the file already exists, it will be overwritten.
-     - Parameter path: The file URL.
+     - Parameter path: The file path relative to the workingspace's root.
      - Parameter content: The content to be written to the file.
      - Throws: An error if the file cannot be written to.
      */
-    func writeFile(at path: URL, with content: String) throws -> Void
+    func writeFile(at path: String, with content: String) throws -> Void
     
     /**
      Creates nested directories at the specified path.
