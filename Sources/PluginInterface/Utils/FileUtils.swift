@@ -32,13 +32,30 @@ public protocol FileUtilsProtocol {
     func openFile(at path: URL) throws -> Data
     
     /**
+     Opens the file located at the specified path.
+     - Parameter path: The path relative to the working space's root.
+     - Returns: The contents of the file in the form of Data
+     - Throws: An error if the file cannot be read.
+     */
+    func openFile(at path: String) throws -> Data
+    
+    /**
      Writes the specified content to the file located at the specified path.
      If the file does not exist, it will be created. If the file already exists, it will be overwritten.
-     - Parameter path: The file path relative to the workingspace's root.
+     - Parameter path: The file path relative to the working space's root.
      - Parameter content: The content to be written to the file.
      - Throws: An error if the file cannot be written to.
      */
     func writeFile(at path: String, with content: String) throws -> Void
+    
+    /**
+     Writes the specified content to the file located at the specified path.
+     If the file does not exist, it will be created. If the file already exists, it will be overwritten.
+     - Parameter path: The file url
+     - Parameter content: The content to be written to the file.
+     - Throws: An error if the file cannot be written to.
+     */
+    func writeFile(at path: URL, with content: String) throws -> Void
     
     /**
      Creates nested directories at the specified path.
@@ -53,4 +70,11 @@ public protocol FileUtilsProtocol {
      - Throws: An error if the content cannot be deleted.
      */
     func delete(at path: URL) throws -> Void
+    
+    /**
+     Deletes the content at the specified path. A confirmation dialog will be displayed.
+     - Parameter path: The file/directory path relative to the working space's root.
+     - Throws: An error if the content cannot be deleted.
+     */
+    func delete(at path: String) throws -> Void
 }
