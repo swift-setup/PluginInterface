@@ -32,6 +32,8 @@ public protocol ProjectManifestProtocol {
      An array of keywords associated with the project
      */
     var keywords: [String] {get set}
+    
+    var systemImageName: String? {get set}
 }
 
 
@@ -42,6 +44,8 @@ public struct ProjectManifest: ProjectManifestProtocol, Codable, Hashable {
     public var shortDescription: String
     public var repository: String
     public var keywords: [String]
+    public var systemImageName: String?
+    
     
     /**
      Initializes a new instance of the struct with the given properties.
@@ -52,12 +56,13 @@ public struct ProjectManifest: ProjectManifestProtocol, Codable, Hashable {
      - parameter repository: The repository URL where the project can be found
      - parameter keywords: An array of keywords associated with the project
      */
-    public init(displayName: String, bundleIdentifier: String, author: String, shortDescription: String, repository: String, keywords: [String]) {
+    public init(displayName: String, bundleIdentifier: String, author: String, shortDescription: String, repository: String, keywords: [String], systemImageName: String? = nil) {
         self.displayName = displayName
         self.bundleIdentifier = bundleIdentifier
         self.author = author
         self.shortDescription = shortDescription
         self.repository = repository
         self.keywords = keywords
+        self.systemImageName = nil
     }
 }
