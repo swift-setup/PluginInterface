@@ -10,7 +10,7 @@ import Foundation
 /**
  Protocol defines a set of file management methods that allows plugins to interact with the file system.
  */
-public protocol FileUtilsProtocol {
+public protocol FileUtilsProtocol: ObservableObject {
     /**
      This is a computed property that returns the current workspace URL.
      */

@@ -17,7 +17,7 @@ open class PluginBuilder {
     /**
      Build the plugin. This method should be overridden by the plugin builder.
      */
-    open func build(fileUtils _: FileUtilsProtocol, nsPanelUtils _: NSPanelUtilsProtocol) -> any PluginInterfaceProtocol {
+    open func build(fileUtils _: any FileUtilsProtocol, nsPanelUtils _: any NSPanelUtilsProtocol) -> any PluginInterfaceProtocol {
         fatalError("You should override this method.")
     }
 }

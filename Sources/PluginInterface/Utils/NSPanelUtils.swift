@@ -11,7 +11,7 @@ import AppKit
 /**
  This protocol defines a list of helper methods to interact with NSPanel
  */
-public protocol NSPanelUtilsProtocol {
+public protocol NSPanelUtilsProtocol: ObservableObject {
     /**
      Displays a confirm dialog and returns a boolean indicating the user's choice.
      - parameter title: The title of the dialog.
