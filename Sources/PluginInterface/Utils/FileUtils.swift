@@ -29,9 +29,10 @@ public protocol FileUtilsProtocol {
     
     /**
      Performs a shallow search of the current working directory and returns the paths of any contained items.
+     - parameter includes: Also search the path in the sub-folders
      - Returns: An array of strings, each of which identifies a file, directory, or symbolic link contained in the current working directory. Returns an empty array if the directory exists but has no contents.
      */
-    func list() throws -> [String]
+    func list(includes: [String]) throws -> [String]
     
     /**
      Opens the file located at the specified path.
