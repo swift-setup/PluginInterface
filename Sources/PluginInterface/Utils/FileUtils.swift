@@ -70,6 +70,24 @@ public protocol FileUtilsProtocol {
     func writeFile(at path: URL, with content: String) throws -> Void
 
     /**
+     Writes the specified content to the file located at the specified path.
+     If the file does not exist, it will be created. If the file already exists, it will be overwritten.
+     - Parameter path: The file path relative to the working space's root.
+     - Parameter content: The content to be written to the file.
+     - Throws: An error if the file cannot be written to.
+     */
+    func writeFile(at path: URL, with content: Data) throws -> Void
+
+    /**
+     Writes the specified content to the file located at the specified path.
+     If the file does not exist, it will be created. If the file already exists, it will be overwritten.
+     - Parameter path: The file path relative to the working space's root.
+     - Parameter content: The content to be written to the file.
+     - Throws: An error if the file cannot be written to.
+     */
+    func writeFile(at path: String, with content: Data) throws -> Void
+
+    /**
      Creates nested directories at the specified path.
      - Parameter path: The directory URL.
      - Throws: An error if the directories cannot be created.
@@ -101,8 +119,9 @@ public protocol FileUtilsProtocol {
     /**
      Displays a file selection dialog and returns the URL of the selected file.
      - Parameter allowedFileTypes: The file types that can be selected.
+     - Parameter defaultFileName: The default file name.
      - Returns: The URL of the selected file.
      - Throws an error if the user does not make a selection.
      */
-    func showSaveFilePanel(allowedFileTypes: [UTType]) throws -> URL
+    func showSaveFilePanel(allowedFileTypes: [UTType], defaultFileName: String) throws -> URL
 }
